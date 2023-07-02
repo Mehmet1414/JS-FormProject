@@ -52,10 +52,6 @@ myForm.addEventListener("submit", (event) => {
     message: message.value,
     date: new Date(),
   };
-  /* Gönderiliyor uyarisi */
-
-  formBtn.disabled = "true";
-  formBtn.innerText = "GÖNDERILIYOR...";
 
   fetch("http://localhost:3004/add-form", {
     method: "post",
@@ -66,25 +62,32 @@ myForm.addEventListener("submit", (event) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      console.log(">>> gelen cevap",data);
 
       /* Gönderildi uyarisi */
-      formBtn.disabled = "false";
-      formBtn.innerText = "GÖNDER";
+      
       modal.style.display = "block";
       modalMsg.innerText = `${data.message}...`
+
+      /* mesaj gönderi sesli uyari */
+      sound.play()
     })
     .catch((error) => {
       console.log(error);
     });
-  /* Formu bosalt ve modal i kapat */
+    const sound = new Audio("./assets/msg-sound.mp3")
+      /* Formu bosalt */
   setTimeout(() => {
       surnameElement.value = "";
       email.value = "";
       message.value = "";
       nameElement.value = "";
 
+      /* modal i kapat */
       modal.style.display = "none";
+
+      /* mesaj sesini sonlandir */
+      sound.pause()
     
   }, 3000);
 });

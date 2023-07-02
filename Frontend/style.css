@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #6661;
 }
 #myForm {
   padding: 20px;
@@ -18,6 +19,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   display: flex;
   flex-direction: column;
+  background: #ffff;
 }
 h3.form-title{
     text-align: center;
@@ -35,7 +37,7 @@ h3.form-title{
   color: rgb(78, 76, 76);
 }
 #formRow input, #formRow textarea{
-    flex: 2;
+    flex: 3;
     padding: 10px;
     outline: none;
     caret-color: orangered;
