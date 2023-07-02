@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="formWrapper">
+      <form id="myForm">
+        <h3 class="form-title">iLETiSiM</h3>
+        <div id="formRow">
+          <label for="name">*Ad</label>
+          <input placeholder="Adinizi giriniz..." type="text" id="name" />
+        </div>
+        <div id="formRow">
+          <label for="surname">*Soyad</label>
+          <input placeholder="Soyadinizi giriniz..." type="text" id="surname" />
+        </div>
+        <div id="formRow">
+          <label for="email">*E-Mail</label>
+          <input placeholder="E-mail giriniz..." type="email" id="email" />
+        </div>
+        <div id="formRow" class="form-msg">
+          <label for="massage">*Mesaj</label>
+          <textarea
+            placeholder="Mesajinizi giriniz..."
+            id="massage"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </div>
+        <div class="form-btn">
+          <button id="formBtn" type="submit">Gönder</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div id="modal" class="modalWrapper">
+      <div class="modal">
+        <p id="modalMsg"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
